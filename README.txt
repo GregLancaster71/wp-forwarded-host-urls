@@ -14,3 +14,9 @@ We don't recommend using this in production, but it can be useful for developmen
 
 Forked from https://github.com/50east/wp-forwarded-host-urls , ideas from https://gist.github.com/949821 and http://odyniec.net/blog/2010/02/wordpress-blog-and-multiple-server-names/
 
+== NOTE ==
+
+This plugin may in fact be entirely unnecessary - you should be able to edit your wp-config.php file and replace the site name definition with the following:
+
+    define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/path/to/wordpress');
+
