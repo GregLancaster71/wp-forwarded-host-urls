@@ -2,19 +2,19 @@
 
 /*
 Plugin Name:    Forwarded Host URLs
-Description:    Forces WordPress to build urls using the X-Forwarded-Host header, if it exists.
-Author:         blahed, nwah
-Author URI:     https://github.com/50east
-Plugin URI:     https://github.com/50east/wp-forwarded-host-urls
+Description:    Forces WordPress to build urls using the Host header, if it exists.
+Author:         blahed, nwah, PageKite
+Author URI:     https://github.com/pagekite
+Plugin URI:     https://github.com/pagekite/wp-forwarded-host-urls
 Version:        0.0.3
 */
 
 function has_forwarded_host() {
-  return array_key_exists('HTTP_X_FORWARDED_HOST', $_SERVER);
+  return array_key_exists('HTTP_HOST', $_SERVER);
 }
 
 function forwarded_host() {
-  return $_SERVER['HTTP_X_FORWARDED_HOST'];
+  return $_SERVER['HTTP_HOST'];
 }
 
 function forwarded_base() {
